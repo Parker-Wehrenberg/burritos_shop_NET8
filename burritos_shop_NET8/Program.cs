@@ -1,6 +1,6 @@
 ﻿using System;
 
-class Program
+partial class Program
 {
 
     /* Go to Tools > Options.
@@ -84,12 +84,46 @@ class Program
         Console.WriteLine("------------------------------------");
 
         // Please Enter Your For Loop Codes Here
+        decimal unitprice = 9.00m;
+        decimal unitcost = 3.80m;
+        decimal minimumcost = 1200.00m;
+
+       int itemsold= 0;
+
+        decimal revenue = 0.00m;
+        decimal cost = 0.00m;
+        decimal profit = 0.00m;
+
+        for (itemsold = 0; ; itemsold++)
+        {
+             revenue = itemsold * unitprice;
+             cost = minimumcost + (itemsold * unitcost);
+             profit = revenue - cost;
+            if (profit <= 0)
+            {
+                Console.WriteLine($"After selling {itemsold} burritos: profit {profit:C2}.");
+            }
+            else
+            {
+                break;
+            }
+        }
 
 
+                Console.WriteLine("------------------------------------");
+                Console.WriteLine("Success! Profit reached.");
+                Console.WriteLine($"Number of Burritos: {itemsold}");
+                Console.WriteLine($"Revenue: {revenue:C2}");
+                Console.WriteLine($"Cost: {cost:C2}");
+                Console.WriteLine($"Profit: {profit:C2}");
+                
+            }
+        }
 
-        Console.WriteLine("\nPress any key to return to menu...");
+
+Console.WriteLine("\nPress any key to return to menu...");
         Console.ReadKey();
-    }
+    
 
     // --- Using While Loop ---
 
@@ -121,4 +155,3 @@ class Program
         Console.WriteLine("\nPress any key to return to menu...");
         Console.ReadKey();
     }
-}
